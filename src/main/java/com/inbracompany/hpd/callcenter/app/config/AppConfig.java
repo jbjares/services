@@ -1,23 +1,19 @@
 package com.inbracompany.hpd.callcenter.app.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import org.springframework.test.context.ContextConfiguration;
 
 import com.mongodb.MongoClient;
 
-@Configuration
 @EnableMongoRepositories(value= {"com.inbracompany.hpd.callcenter.persistence.data.repository"})
 @PropertySource("file:src/main/resources/hpdcallcenterconfig.properties")
 @PropertySource("file:src/main/resources/log4j.properties")
-@ContextConfiguration(value = {"file:src/main/resources/application.yml"})
+@Configuration(value ="file:src/main/resources/application.yml")
 @EnableAspectJAutoProxy(proxyTargetClass = true,exposeProxy = true)
 public class AppConfig extends AbstractMongoConfiguration {
 	

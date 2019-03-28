@@ -1,13 +1,12 @@
 package com.inbracompany.train.sdk.trainmodel;
 
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-import com.inbracompany.hpd.callcenter.app.config.AppConfig;
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { AppConfig.class })
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(classes = { AppConfig.class })
+@EnableAspectJAutoProxy
+@SpringBootTest
 public class TrainModelToMongoTest {
 //
 //	@Autowired

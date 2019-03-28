@@ -1,7 +1,5 @@
 package com.inbracompany.hpd.callcenter.model.impl;
 import java.io.Serializable;
-import java.util.Map;
-import java.util.TreeMap;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -10,7 +8,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.inbracompany.hpd.callcenter.model.IMetadata;
 import com.inbracompany.hpd.callcenter.model.IMongo;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 @XStreamAlias("caller")
 @Document(collection = "caller")
@@ -28,38 +25,49 @@ public class CallerModel  implements  IMongo, IMetadata, Serializable{
 	@XStreamAlias("name")
 	private String name;
 	
-	@XStreamImplicit(itemFieldName="intents")
-	private Map<IntentModel, PathModel> intents = new TreeMap<IntentModel, PathModel>();
+	@XStreamAlias("intent")
+	private IntentModel intent;
 
+	@XStreamAlias("context")	
 	private String context;
-	
-	
 
-    public Map<IntentModel, PathModel> getIntents() {
-		return intents;
+	public ObjectId get_id() {
+		return _id;
 	}
 
-	public void setIntents(Map<IntentModel, PathModel> intents) {
-		this.intents = intents;
+	public void set_id(ObjectId _id) {
+		this._id = _id;
 	}
 
-	public ObjectId getId() {
-        return _id;
-    }
-
-    public void setId(ObjectId id) {
-        this._id = id;
-    }
-
-	@Override
-	public void setContext(String context) {
-		this.context=context;
+	public String getName() {
+		return name;
 	}
 
-	@Override
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public IntentModel getIntent() {
+		return intent;
+	}
+
+	public void setIntent(IntentModel intent) {
+		this.intent = intent;
+	}
+
 	public String getContext() {
-		return this.context;
+		return context;
 	}
+
+	public void setContext(String context) {
+		this.context = context;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
 
 	
 }
