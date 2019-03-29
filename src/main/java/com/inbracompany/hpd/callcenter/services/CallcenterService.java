@@ -26,15 +26,7 @@ import com.inbracompany.hpd.callcenter.model.impl.PatientModel;
 import com.inbracompany.hpd.callcenter.model.impl.PatientQueryModel;
 import com.inbracompany.hpd.callcenter.model.impl.PreparoModel;
 
-//@Configuration(value= "AppConfig.class")
-//@Configuration(value= "SwaggerConfig.class")
-//@ComponentScan(basePackageClasses = 
-//{
-//		com.inbracompany.hpd.callcenter.action.CallcenterAction.class,
-//		com.inbracompany.hpd.callcenter.services.CallcenterService.class,
-//		com.inbracompany.hpd.callcenter.model.impl.ContextModel.class,
-//		com.inbracompany.hpd.callcenter.persistence.data.repository.IContextRepository.class
-//})
+
 @EnableAspectJAutoProxy
 @RestController
 @Service
