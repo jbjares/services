@@ -14,6 +14,12 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @Document(collection = "context")
 public class ContextModel implements  IMongo, IMetadata, Serializable{
 		
+		/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5261593300769642821L;
+
+
 		@Id
 		@XStreamAlias("_id")
 		private ObjectId _id;

@@ -7,29 +7,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.inbracompany.hpd.callcenter.model.IMongo;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XStreamAlias("intent")
-@Document(collection = "intent")
-public enum IntentModel implements  IMongo, Serializable{
+@XStreamAlias("sexo")
+@Document(collection = "sexo")
+public enum SexoModel implements  IMongo, Serializable{
 	
 
-	@XStreamAlias("consulta")
-	CONSULTA("CONSULTA"), 
-		@XStreamAlias("exames")
-	EXAMES("EXAMES"), 
-		@XStreamAlias("cancelamentos")
-	CANCELAMENTOS("CANCELAMENTOS"),
-	@XStreamAlias("oncologia")
-		ONCOLOGIA("ONCOLOGIA");  
-	  
+	@XStreamAlias("masculino")
+	MASCULINO("MASCULINO"), 
+		@XStreamAlias("feminino")
+	FEMININO("FEMININO");
+	
 	 private final String value;  
 	  
-	 IntentModel(String value) {  
+	 SexoModel(String value) {  
 	   this.value = value;  
 	 }  
 	  
-	 public static IntentModel fromValue(String value) {  
+	 public static SexoModel fromValue(String value) {  
 	   if (value != null) {  
-	     for (IntentModel intent : values()) {  
+	     for (SexoModel intent : values()) {  
 	       if (intent.value.equals(value)) {  
 	         return intent;  
 	       }  

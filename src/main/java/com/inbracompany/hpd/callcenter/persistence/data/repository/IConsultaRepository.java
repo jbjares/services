@@ -9,16 +9,17 @@ import org.springframework.data.repository.query.QueryByExampleExecutor;
 import org.springframework.stereotype.Repository;
 
 import com.inbracompany.hpd.callcenter.model.impl.CallerModel;
+import com.inbracompany.hpd.callcenter.model.impl.ConsultaModel;
 
 @EnableAspectJAutoProxy
 @Repository
-public interface ICallerRepository extends CrudRepository<CallerModel, String>, QueryByExampleExecutor<CallerModel>  {
+public interface IConsultaRepository extends CrudRepository<ConsultaModel, String>, QueryByExampleExecutor<ConsultaModel>  {
 	
 	
 	//@Query("{context:'?0'}")
 	//@Query(value="{}", fields="{ 'context' : ?0}")
 	//@Query("{ 'context' : { $regex: ?0 } }")
 	@Query(value="{}", fields="{'context' : {$elemMatch: {'context':?0}}}")
-	List<CallerModel> findAllByContext(String context);
+	List<ConsultaModel> findAllByContext(String context);
 	
 }

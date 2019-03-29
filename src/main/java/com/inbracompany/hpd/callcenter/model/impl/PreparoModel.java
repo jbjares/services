@@ -7,36 +7,53 @@ import com.inbracompany.hpd.callcenter.model.IMetadata;
 import com.inbracompany.hpd.callcenter.model.IMongo;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XStreamAlias("patient")
-@Document(collection = "patient")
-public class Patient  implements  IMongo, IMetadata{
+@XStreamAlias("exame")
+@Document(collection = "exame")
+public class PreparoModel  implements  IMongo, IMetadata{
 	
 
 	@Id
 	private ObjectId _id;
 	
-	@XStreamAlias("fullName")
-	private String fullName;
+	@XStreamAlias("exame")
+	private Boolean exame;
+
 	
 	@XStreamAlias("context")
 	private String context;
 
-	public String getFullName() {
-		return fullName;
+
+	public ObjectId get_id() {
+		return _id;
 	}
 
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+
+	public void set_id(ObjectId _id) {
+		this._id = _id;
 	}
+
+
+	public Boolean getExame() {
+		return exame;
+	}
+
+
+	public void setExame(Boolean exame) {
+		this.exame = exame;
+	}
+
 
 	public String getContext() {
 		return context;
 	}
 
+
 	public void setContext(String context) {
 		this.context = context;
 	}
 	
-	
+
+
+
 	
 }

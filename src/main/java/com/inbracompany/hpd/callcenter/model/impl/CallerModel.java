@@ -12,21 +12,14 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("caller")
 @Document(collection = "caller")
 public class CallerModel  implements  IMongo, IMetadata, Serializable{
-	
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2994897932355760424L;
 
 	@Id
 	private ObjectId _id;
 	
-	@XStreamAlias("name")
-	private String name;
-	
-	@XStreamAlias("intent")
-	private IntentModel intent;
+	@XStreamAlias("nomeCompleto")
+	private String nomeCompleto;
 
 	@XStreamAlias("context")	
 	private String context;
@@ -39,20 +32,14 @@ public class CallerModel  implements  IMongo, IMetadata, Serializable{
 		this._id = _id;
 	}
 
-	public String getName() {
-		return name;
+
+
+	public String getNomeCompleto() {
+		return nomeCompleto;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public IntentModel getIntent() {
-		return intent;
-	}
-
-	public void setIntent(IntentModel intent) {
-		this.intent = intent;
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
 	}
 
 	public String getContext() {
@@ -63,9 +50,6 @@ public class CallerModel  implements  IMongo, IMetadata, Serializable{
 		this.context = context;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 	
 	
 
